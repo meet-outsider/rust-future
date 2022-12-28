@@ -1,7 +1,7 @@
 pub struct Basic {}
 
 impl Basic {
-    pub fn _variable() {
+    pub fn variable() {
         // 变量不可变
         let var = 3;
         // wrong case
@@ -19,39 +19,59 @@ impl Basic {
         let guess: i32 = "45".parse().expect("not a number!");
         println!("guess: {}", guess);
     }
-    // pub fn _composite_type() {
-    //     // 初始化数组
-    //     let array1 = [2, 3, 2, 4, 1];
-    //     // 初始化值为0，长度为4
-    //     let array2 = [0; 4];
-    //     for x in array1 {
-    //         print!("{}\t", x)
-    //     }
-    //     println!();
-    //     for x in array2 {
-    //         print!("{}\t", x)
-    //     }
-    //     let _ = {
-    //         let _x = 3;
-    //         _x + 1;
-    //     };
-    //     // println!("the value of y is {}", y);
-    // }
+    pub fn composite_type() {
+        // 初始化数组
+        let array1 = [2, 3, 2, 4, 1];
+        // 初始化值为0，长度为4
+        let array2 = [0; 4];
+        for x in array1 {
+            print!("{}\t", x)
+        }
+        println!();
+        for x in array2 {
+            print!("{}\t", x)
+        }
+    }
 
-    // pub fn _loop() {
-    //     let mut  count = 0;
-    //
-    //     let number = loop {
-    //         count += 1;
-    //         if count == 10 {
-    //             break count * 2;
-    //         }
-    //     };
-    //     println!("the value of number is {}",number)
-    // }
+    pub fn _loop() {
+        let mut count = 0;
 
-    pub fn _move_copy(){
+        let number = loop {
+            count += 1;
+            if count == 10 {
+                break count * 2;
+            }
+        };
+        println!("the value of number is {}", number)
+    }
+
+    pub fn _move_copy() {
         println!("基础类型（在栈上的操作）都是copy的，性能高");
         print!("复杂类型（在堆上操作）几乎都是移动操作，性能高，如果需要深拷贝，需要使用clone方法）");
     }
+
+    pub fn match_fn(coin: Coin) {
+        match coin {
+            Coin::Penny => {
+                println!("1")
+            }
+            Coin::Nickel => println!("10"),
+            Coin::Dime => println!("15"),
+            Coin::Quarter => println!("20"),
+        }
+        let ip1 = 11;
+        let ip_str = match ip1 {
+            10 => "127.0.0.1",
+            _ => "::1",
+        };
+        println!("ip_str is {}", ip_str)
+    }
 }
+
+pub enum Coin {
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
+}
+
