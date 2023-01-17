@@ -73,7 +73,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "rust_future"
+name = "rust-future"
 version = "0.1.0"
 dependencies = [
  "rand",
