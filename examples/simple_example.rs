@@ -1,3 +1,3 @@
 fn main() {
-    println!("project example!")
+    println!("this is simple examples")
 }

@@ -10,7 +10,7 @@ impl Solution {
     }
     // &self 自身引用，不转移所有权
     /**
-    求
+      求
      */
     pub fn _contains_duplicate(&self, nums: Vec<i32>) -> bool {
         let mut set = HashSet::new();
